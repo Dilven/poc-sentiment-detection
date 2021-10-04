@@ -5,6 +5,7 @@ const client = new ComprehendClient({ region: "eu-central-1" });
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const parsedBody = event.body ? JSON.parse(event.body) : {};
+    console.log("🚀 ~ file: index.ts ~ line 8 ~ handler ~ event", event)
     if(!parsedBody.text) {
       return {
         statusCode: 400,
