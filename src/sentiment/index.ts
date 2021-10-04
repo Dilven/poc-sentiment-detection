@@ -26,8 +26,9 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
             body: JSON.stringify(data.SentimentScore)
         }
       } catch (error) {
+        console.log("🚀 ~ file: index.ts ~ line 29 ~ handler ~ error", error)
         return {
           statusCode: 500,
-          body: JSON.stringify({})
+          body: JSON.stringify({ message: error.message })
       }
 }
